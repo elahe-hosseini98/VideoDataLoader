@@ -1,3 +1,6 @@
+ ### A brief documentation ###
+
+
 - **why did I design the video dataloader in this way?**<br />
 in this design, we can directly load video files without preprocessing. It is easy to add any other required transform classes or customize dataset classes to change the way we're reading video files. another reason was that using Torch made the task a lot easier to code and handle.
 
