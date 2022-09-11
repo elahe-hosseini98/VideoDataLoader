@@ -1,6 +1,6 @@
  ### A brief documentation ###
  **dataset.py:** <br />
- There is a class named VideoCaptionDataset in this file that inherits Dataset class of torch lib. it helps us read path and caption from the .csv file and   aslo apply Wanted transforms and preprocesses on any columns, in this case "path" col. 
+ There is a class named VideoCaptionDataset in this file that inherits Dataset class of torch lib. it helps us read path and caption from the .csv file and   aslo apply wanted transforms and preprocesses on any columns, in this case "path" col. 
  
  **trasnform.py:** <br />
  There are two classes in this file, VideoFilePathToTensor and  SampleRandomFrames. the first class, gives a path to a video and return a sequence of the frames, and the second one, gives a parameter named num_frames which indicates the number of random frames that we want to sample from each video. If this parameter is not set, the video will be returned with all its original frames.
