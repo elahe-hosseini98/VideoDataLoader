@@ -53,7 +53,6 @@ class SampleRandomFrames(object):
             for i, num_frame in enumerate(random_frames):
                 resampled_video[i, :, :, :] = video[num_frame, :, :, :]
             return resampled_video
-        
         return video
         
         
