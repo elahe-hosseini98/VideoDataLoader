@@ -36,23 +36,25 @@ class SampleRandomFrames(object):
         self.num_frames = num_frames
         
     def __call__(self, video):
-        L, H, W, C = video.size()
-        assert(self.num_frames < L)
-        
-        random_frames = []
-        for i in range(self.num_frames):
-            n = random.randint(0, L-1)
-            random_frames.append(n)
+       if  self.num_frames:
+            L, H, W, C = video.size()
+            assert(self.num_frames < L)
             
-        # sorting the list of random frame number to not lose the video content
-        random_frames.sort()
+            random_frames = []
+            for i in range(self.num_frames):
+                n = random.randint(0, L-1)
+                random_frames.append(n)
+                
+            # sorting the list of random frame number to not lose the video content
+            random_frames.sort()
+            
+            resampled_video = torch.FloatTensor(self.num_frames, H, W, C)
+            
+            for i, num_frame in enumerate(random_frames):
+                resampled_video[i, :, :, :] = video[num_frame, :, :, :]
+            return resampled_video
         
-        resampled_video = torch.FloatTensor(self.num_frames, H, W, C)
-        
-        for i, num_frame in enumerate(random_frames):
-            resampled_video[i, :, :, :] = video[num_frame, :, :, :]
-        
-        return resampled_video
+        return video
         
         
         
