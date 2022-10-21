@@ -8,8 +8,6 @@
  **test.py:** <br />
  This is a very simple code to test my custom dataLoader. I have prepared a dataset of 5 random short videos and uploaded them into /video folder. A .csv file (video-caption.csv) is also prepared in two cols (path to video file and caption). 
  - - - -
-
-### My answers ###
 - **Why did I design the video dataloader in this way?**<br />
 In this design, we can directly load video files without preprocessing. It is easy to add any other required transform classes or customize dataset classes to change the way we're reading video files. Another reason was that using Torch made the task a lot easier to code and handle the process.
 
